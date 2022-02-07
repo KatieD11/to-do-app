@@ -1,12 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Background from "./components/Background";
+import {ToDoContextProvider} from "./store/todo-context";
+import ToDoContainer from "./components/ToDoContainer";
 
 function App() {
   return (
-    <div className="App">
-      <Background><h1 className="text-white">Hello </h1></Background>
-    </div>
+    <ToDoContextProvider>
+      <div className="App">
+        <Background>
+          <ToDoContainer/>
+        </Background>
+      </div>
+      </ToDoContextProvider>
   );
 }
 

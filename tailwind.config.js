@@ -5,6 +5,8 @@ module.exports = {
       colors: {
         // Custome colours
         brightBlue: "hsl(220, 98%, 61%)",
+        check_bg_blue: "hsl(192, 100%, 67%)",
+        check_bg_purple: "hsl(280, 87%, 65%)",
         lightTheme_light_grey: "hsl(0, 0%, 98%)",
         lightTheme_vlight_grey_blue: "hsl(236, 33%, 92%)",
         lightTheme_light_grey_blue: "hsl(233, 11%, 84%)",
