@@ -6,6 +6,8 @@
 body {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  color: hsl(235, 19%, 35%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

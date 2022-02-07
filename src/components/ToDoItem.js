@@ -11,7 +11,7 @@ const ToDoItem = (props) => {
   return (
     <div className="flex py-4 px-4">
       <ToDoCheckMark completed={props.item.completed} onClick={checkClickHandler}/>
-      <p className={`pl-4 ${props.item.completed && "line-through"}`}>
+      <p className={`pl-4 capitalize ${props.item.completed && "line-through"}`}>
         {props.item.task}
       </p>
     </div>

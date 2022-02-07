@@ -8,6 +8,9 @@ import ToDoItem from "./ToDoItem";
 
 const ToDoContainer = () => {
   const context = useContext(ToDoContext);
+  const onClickClear = () => {
+      context.clearCompleted();
+  }
 
   return (
     <div className="max-w-lg mx-auto">
@@ -24,6 +27,7 @@ const ToDoContainer = () => {
       {context.toDoItems.map(item => (
           <ToDoItem key={item.id} item={item}/>
       ))}
+      <button onClick={onClickClear}>Clear completed</button>
       </Card>
     </div>
   );

@@ -25,7 +25,7 @@ const NewToDo = (props) => {
       >
         <div className="w-5 h-5 my-0.5 rounded-full bg-white mx-auto"></div>
       </div>
-      <input type="text" value={val} onChange={onChangeHandler} onKeyDown={newInputHandler}></input>
+      <input type="text" value={val} onChange={onChangeHandler} onKeyDown={newInputHandler} className="ml-4 w-full focus:outline-0"></input>
     </div>
   );
 };
