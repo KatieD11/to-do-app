@@ -5,6 +5,7 @@ const ToDoContext = React.createContext({
   toDoItems: [],
   toggleDarkStateHandler: () => {},
   toggleCompleteTaskHandler: () => {},
+  addToDoItem: () => {},
 });
 
 export const ToDoContextProvider = (props) => {
@@ -37,6 +38,13 @@ export const ToDoContextProvider = (props) => {
     setToDoItems(items);
   };
 
+  const addToDoItem = (newTask) => {
+    const d = new Date();
+    //setToDoItems(...toDoItems, { id: d.getTime(), task: newTask, completed: false })
+    setToDoItems(prevState => ([...prevState, { id: d.getTime(), task: newTask, completed: false }]));
+    console.log("ToDoContext addToDoItem: ",newTask, " ", d.getTime() );
+  }
+
   return (
     <ToDoContext.Provider
       value={{
@@ -44,6 +52,7 @@ export const ToDoContextProvider = (props) => {
         toDoItems,
         toggleDarkStateHandler,
         toggleCompleteTaskHandler,
+        addToDoItem
       }}
     >
       {props.children}
