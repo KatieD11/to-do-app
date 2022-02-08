@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 const ToDoContext = React.createContext({
-  darkState: true,
-  toDoItems: [],
-  toggleDarkStateHandler: () => {},
-  toggleCompleteTaskHandler: () => {},
-  addToDoItem: () => {},
-  clearCompleted: () => {},
-  removeToDoItem: () => {},
+  darkState: true, // Sets the light or dark screen mode
+  toDoItems: [], // Array to store the To Do items which consist of an id, task text, and completed indicator
+  toggleDarkStateHandler: () => {}, // Function to change light or dark screen mode
+  toggleCompleteTaskHandler: () => {}, // Function to change the complete state of a To Do item
+  addToDoItem: () => {}, // Function to add an item to the toDoItems array
+  clearCompleted: () => {}, // Function to remove all items marked completed in the toDoItems array
+  removeToDoItem: () => {}, // Function to remove a specific item (given by the items ID)
 });
 
 export const ToDoContextProvider = (props) => {
-  const [darkState, setDarkState] = useState(true);
+  const [darkState, setDarkState] = useState(true); 
   const [toDoItems, setToDoItems] = useState([
     { id: "1", task: "Read for 1 hour", completed: false },
     { id: "2", task: "Study", completed: true },
@@ -29,22 +29,20 @@ export const ToDoContextProvider = (props) => {
 
     // 1. Make a shallow copy of the items
     let items = [...toDoItems];
-    // 2. Make a shallow copy of the item you want to mutate
+    // 2. Make a shallow copy of the item to update
     let item = { ...items[index] };
-    // 3. Replace the property you're intested in
-    //item.completed = true;
+    // 3. Update the completed property
     item.completed = !item.completed;
-    // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
+    // 4. Put it back into the array. N.B. we *are* mutating the array here, but that's why we made a copy first
     items[index] = item;
-    // 5. Set the state to our new copy
+    // 5. Set the state to the new copy
     setToDoItems(items);
   };
 
   const addToDoItem = (newTask) => {
     const d = new Date();
-    //setToDoItems(...toDoItems, { id: d.getTime(), task: newTask, completed: false })
+    // Add the new item to the start of the list
     setToDoItems(prevState => ([{ id: d.getTime(), task: newTask, completed: false }, ...prevState]));
-    //console.log("ToDoContext addToDoItem: ",newTask, " ", d.getTime() );
   }
 
   const removeToDoItem = (id) => {
@@ -56,7 +54,6 @@ export const ToDoContextProvider = (props) => {
       const clearedList = toDoItems.filter(item =>
          (item.completed !== true)
       );
-
       setToDoItems(clearedList);
   }
 

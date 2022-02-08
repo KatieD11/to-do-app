@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import ToDoContext from "../store/todo-context";
 
 const Card = (props) => {
+    // Use the darkState variable in the ToDoContext 
+    // to determine the background colour of the Card component
     const context = useContext(ToDoContext);
 
     return (

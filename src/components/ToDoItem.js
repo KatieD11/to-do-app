@@ -4,13 +4,14 @@ import ToDoContext from "../store/todo-context";
 import crossIcon from "../images/icon-cross.svg"
 
 const ToDoItem = (props) => {
+  // Use the ToDoContext to handle the To Do items
   const context = useContext(ToDoContext);
   const checkClickHandler = () => {
       context.toggleCompleteTaskHandler(props.item.id);
   };
-
+  // Only show the 'remove cross' if the user is hovering over the item
   const [showCross, setShowCross] = useState(false);
-
+  // If the 'remove cross' is clicked, remove the To Do item
   const removeClickHandler = () => {
     context.removeToDoItem(props.item.id);
 };
