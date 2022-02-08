@@ -17,7 +17,7 @@ const Background = (props) => {
         <img src={darkState ? bgDarkMobile: bgLightMobile} alt="" className="w-full object-cover md:hidden sm:block"/>
         <img src={darkState ? bgDark: bgLight} alt="" className="w-full object-cover md:block sm:hidden"/>
       </div>
-      <div className="-mt-52 relative z-1">{props.children}</div>
+      <div className="-mt-52 lg:-mt-52 md:-mt-36 relative z-1">{props.children}</div>
     </div>
   );
 };
