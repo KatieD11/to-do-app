@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Background from "./components/Background";
 import {ToDoContextProvider} from "./store/todo-context";
