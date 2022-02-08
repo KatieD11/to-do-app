@@ -6,6 +6,8 @@ import bgLightMobile from "../images/bg-mobile-light.jpg";
 import ToDoContext from "../store/todo-context";
 
 const Background = (props) => {
+  // Use the darkState variable in the ToDoContext 
+  // to check which background image to use
   const context = useContext(ToDoContext);
   const darkState = context.darkState;
 

@@ -7,12 +7,14 @@ import NewToDo from "./NewToDo";
 import ToDoItem from "./ToDoItem";
 
 const ToDoContainer = () => {
+  // Use ToDoContext to get list items and darkState mode
   const context = useContext(ToDoContext);
-
+  // If the 'Clear completed' button is cleared, call the clearCompleted() function in the 
+  // ToDoContext to handle clearing the list
   const onClickClear = () => {
     context.clearCompleted();
   };
-
+  // Set the filtered list (to be displayed) using the activeFilter state
   let filteredToDoList = context.toDoItems;
   const [activeFilter, setActiveFilter] = useState("all");
   if (activeFilter === "all") {
@@ -22,7 +24,7 @@ const ToDoContainer = () => {
   } else if (activeFilter === "completed") {
     filteredToDoList = filteredToDoList.filter((item) => item.completed);
   }
-
+  // When a filter button is clicked, update the activeFilter state
   const onClickFilter = (e) => {
     //console.log(e.target.value);
     setActiveFilter(e.target.value);
