@@ -1,4 +1,4 @@
-# Frontend Mentor - Todo app
+# Frontend Mentor - To Do app
 
 ![Design preview for the Todo app coding challenge](./desktop-screenshots.png)
 
