@@ -79,7 +79,7 @@ const ToDoContainer = () => {
               } ${
                 activeFilter === "active"
                   ? "text-brightBlue"
-                  : "hover:text-lightTheme_vdark_grey_blue"
+                  : ""
               }`}
             >
               Active
@@ -95,7 +95,7 @@ const ToDoContainer = () => {
               ${
                 activeFilter === "completed"
                   ? "text-brightBlue"
-                  : "hover:text-lightTheme_vdark_grey_blue"
+                  : ""
               }`}
             >
               Completed
